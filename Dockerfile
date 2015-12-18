@@ -12,7 +12,9 @@ RUN mkdir -p /opt/ant && \
 
 ENV ANT_HOME=/opt/ant
 
+VOLUME ["/pwd"]
+
 USER developer:developer
-WORKDIR /home/developer
+WORKDIR /pwd
 ENTRYPOINT ["/opt/ant/bin/ant"]
 CMD ["-version"]
